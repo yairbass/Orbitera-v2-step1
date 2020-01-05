@@ -32,24 +32,24 @@ pipelines:
             - name: gradle_build_info
           integrations:
             - name: art
-#         execution:
-#           onStart:
-#             - echo "Starting gradle build"
-#           onSuccess:
-#             - echo "Job well done!"
-#           onFailure:
-#             - echo "uh oh, something went wrong"
-#           onComplete: #always
-#             - echo "Cleaning up some stuff"
+        execution:
+          onStart:
+            - echo "Starting gradle build"
+          onSuccess:
+            - echo "Job well done!"
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete: #always
+            - echo "Cleaning up some stuff"
 
 
-      - name: publish_svc_build_demo
+   - name: publish_svc_build_demo
         type: PublishBuildInfo
         configuration:
           inputSteps:
-            - name: gradle_build_info
+            - name: push_svc_demo
           outputResources:
-            - name: gradle_build_info_demo
+            - name: svc_build_info_demo
 
 
 

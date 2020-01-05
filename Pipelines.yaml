@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       path: yairbass/project-examples
-      gitProvider: yairbgithub
+      gitProvider: YairBassGitHub
       branches:
         include: eplus-v2-orbitera
 
@@ -19,29 +19,21 @@ pipelines:
     steps:
       - name: gradle_bld_svc_demo
         type: GradleBuild
-        configuration:
-          runtime:
-            type: image
-            image:
-              custom:
-                name: drydock/u18java
-                tag: master
-          gradleCommand:        clean artifactoryPublish -b build.gradle
-          sourceLocation:       tutorial/step1-create-gradle-app
-          configFileLocation:   .
-          configFileName:       gradle.properties
-          forceXrayScan:        false
-          autoPublishBuildInfo: true
-          inputResources:
-            - name: orbitera_gitRepo_demo
-          outputResources:
-            - name: gradleBuildInfo
-          integrations:
-            - name: art
+        gradleCommand:        clean artifactoryPublish -b build.gradle
+        sourceLocation:       $res_orbitera_gitRepo_demo_resourcePath/tutorial/step1-create-gradle-app
+        configFileLocation:   .
+        configFileName:       gradle.properties
+        forceXrayScan:        false
+        autoPublishBuildInfo: true
+        inputResources:
+          - name: orbitera_gitRepo_demo
+        outputResources:
+          - name: gradleBuildInfo
+        integrations:
+          - name: art
         execution:
           onStart:
-            - cd ../workspace
-            - ls -ltr
+            - ls -ltr 
             - pwd
           onSuccess:
             - echo "Job well done!"

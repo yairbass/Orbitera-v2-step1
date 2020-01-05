@@ -21,9 +21,9 @@ pipelines:
         type: GradleBuild
         configuration:
           gradleCommand:        clean artifactoryPublish
-          sourceLocation:       ./tutorial/step1-create-gradle-app
-          configFileLocation:   ./tutorial/step1-create-gradle-app
-          configFileName:       gradle.properties
+          sourceLocation:       /tutorial/step1-create-gradle-app
+          configFileLocation:   /tutorial/step1-create-gradle-app
+          configFileName:       build.gradle
           forceXrayScan:        false
           autoPublishBuildInfo: true
           inputResources:

@@ -15,7 +15,7 @@ resources:
       buildNumber: 1
 
 pipelines:
-  - name: Gradle Build
+  - name: Gradle_Build
     steps:
       - name: bld_svc_demo
         type: GradleBuild

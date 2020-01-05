@@ -10,7 +10,7 @@ resources:
   - name: gradle_build_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: artifactory_eu
+      sourceArtifactory: art
       buildName: gradle_build
       buildNumber: 1
 

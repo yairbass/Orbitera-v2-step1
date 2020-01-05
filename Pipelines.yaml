@@ -34,7 +34,8 @@ pipelines:
             - name: art
         execution:
           onStart:
-            - echo "Starting gradle build"
+            - ls -ltr
+            - pwd
           onSuccess:
             - echo "Job well done!"
           onFailure:

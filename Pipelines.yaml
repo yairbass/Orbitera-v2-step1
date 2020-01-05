@@ -35,7 +35,7 @@ pipelines:
           inputResources:
             - name: orbitera_gitRepo_demo
           outputResources:
-            - name: gradle_build_info
+            - name: gradleBuildInfo
           integrations:
             - name: art
         execution:
@@ -53,7 +53,7 @@ pipelines:
         type: PublishBuildInfo
         configuration:
           inputSteps:
-            - name: gradle_bld_svc_demo
+            - name: gradleBuildInfo
           outputResources:
             - name: svc_build_info_demo
 

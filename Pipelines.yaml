@@ -34,7 +34,6 @@ pipelines:
             - name: art
         execution:
           onStart:
-            - cd $res_orbitera_gitRepo_demo_resourcePath
             - pwd
             - ls -ltr
           onSuccess:

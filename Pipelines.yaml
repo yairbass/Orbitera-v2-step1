@@ -31,7 +31,7 @@ pipelines:
           outputResources:
             - name: gradle_build_info
           integrations:
-            - name: artifactory_eu
+            - name: art
         execution:
           onStart:
             - echo "Starting gradle build"

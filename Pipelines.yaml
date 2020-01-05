@@ -17,7 +17,7 @@ resources:
 pipelines:
   - name: Gradle_Build
     steps:
-      - name: bld_svc_demo
+      - name: gradle_bld_svc_demo
         type: GradleBuild
         configuration:
           gradleCommand:        clean artifactoryPublish
@@ -32,15 +32,15 @@ pipelines:
             - name: gradle_build_info
           integrations:
             - name: art
-        execution:
-          onStart:
-            - echo "Starting gradle build"
-          onSuccess:
-            - echo "Job well done!"
-          onFailure:
-            - echo "uh oh, something went wrong"
-          onComplete: #always
-            - echo "Cleaning up some stuff"
+#         execution:
+#           onStart:
+#             - echo "Starting gradle build"
+#           onSuccess:
+#             - echo "Job well done!"
+#           onFailure:
+#             - echo "uh oh, something went wrong"
+#           onComplete: #always
+#             - echo "Cleaning up some stuff"
 
 
       - name: publish_svc_build_demo

@@ -15,7 +15,7 @@ resources:
       buildNumber: 1
 
 pipelines:
-  - name: gradle_build
+  - name: demo_pipeline_1_java
     steps:
       - name: gradle_bld_svc_demo
         type: GradleBuild
@@ -29,7 +29,7 @@ pipelines:
           gradleCommand:        clean artifactoryPublish -b build.gradle
           sourceLocation:       tutorial/step1-create-gradle-app
           configFileLocation:   .
-          configFileName:       grade.properties
+          configFileName:       gradle.properties
           forceXrayScan:        false
           autoPublishBuildInfo: true
           inputResources:
@@ -49,13 +49,13 @@ pipelines:
           onComplete: #always
             - echo "Cleaning up some stuff"
             
-      - name: publish_svc_build_demo
-        type: PublishBuildInfo
-        configuration:
-          inputSteps:
-            - name: gradleBuildInfo
-          outputResources:
-            - name: svc_build_info_demo
+#       - name: publish_svc_build_demo
+#         type: PublishBuildInfo
+#         configuration:
+#           inputSteps:
+#             - name: gradleBuildInfo
+#           outputResources:
+#             - name: svc_build_info_demo
 
 
 

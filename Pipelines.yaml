@@ -19,28 +19,28 @@ pipelines:
     steps:
       - name: bld_svc_demo
         type: GradleBuild
-                configuration:
-                  gradleCommand:        clean artifactoryPublish
-                  sourceLocation:       ./tutorial/step1-create-gradle-app/
-                  configFileLocation:   ./tutorial/step1-create-gradle-app/
-                  configFileName:       build.gradle
-                  forceXrayScan:        false
-                  autoPublishBuildInfo: true
-                  inputResources:
-                    - name: orbitera_gitRepo_demo
-                  outputResources:
-                    - name: gradle_build_info
-                  integrations:
-                    - name: artifactory_eu
-                execution:
-                  onStart:
-                    - echo "Starting gradle build"
-                  onSuccess:
-                    - echo "Job well done!"
-                  onFailure:
-                    - echo "uh oh, something went wrong"
-                  onComplete: #always
-                    - echo "Cleaning up some stuff"
+        configuration:
+          gradleCommand:        clean artifactoryPublish
+          sourceLocation:       ./tutorial/step1-create-gradle-app/
+          configFileLocation:   ./tutorial/step1-create-gradle-app/
+          configFileName:       build.gradle
+          forceXrayScan:        false
+          autoPublishBuildInfo: true
+          inputResources:
+            - name: orbitera_gitRepo_demo
+          outputResources:
+            - name: gradle_build_info
+          integrations:
+            - name: artifactory_eu
+        execution:
+          onStart:
+            - echo "Starting gradle build"
+          onSuccess:
+            - echo "Job well done!"
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete: #always
+            - echo "Cleaning up some stuff"
 
 
       - name: publish_svc_build_demo
@@ -51,6 +51,6 @@ pipelines:
           outputResources:
             - name: svc_build_info_demo
 
-     
+
 
   

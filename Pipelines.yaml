@@ -46,7 +46,7 @@ pipelines:
         type: PublishBuildInfo
         configuration:
           inputSteps:
-            - name: push_svc_demo
+            - name: gradle_bld_svc_demo
           outputResources:
             - name: svc_build_info_demo
 

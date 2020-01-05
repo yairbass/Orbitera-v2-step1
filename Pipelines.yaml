@@ -7,7 +7,7 @@ resources:
       branches:
         include: eplus-v2-orbitera
 
-  - name: gradle_build_info
+  - name: gradleBuildInfo
     type: BuildInfo
     configuration:
       sourceArtifactory: art
@@ -20,10 +20,16 @@ pipelines:
       - name: gradle_bld_svc_demo
         type: GradleBuild
         configuration:
-          gradleCommand:        clean artifactoryPublish
+          runtime:
+            type: image
+            image:
+              custom:
+                name: drydock/u18java
+                tag: master
+          gradleCommand:        clean artifactoryPublish -b build.gradle
           sourceLocation:       tutorial/step1-create-gradle-app
-          configFileLocation:   tutorial/step1-create-gradle-app
-          configFileName:       build.gradle
+          configFileLocation:   .
+          configFileName:       grade.properties
           forceXrayScan:        false
           autoPublishBuildInfo: true
           inputResources:

@@ -15,7 +15,7 @@ resources:
       buildNumber: 1
 
 pipelines:
-  - name: Gradle_Build
+  - name: gradle_build
     steps:
       - name: gradle_bld_svc_demo
         type: GradleBuild
@@ -41,9 +41,8 @@ pipelines:
             - echo "uh oh, something went wrong"
           onComplete: #always
             - echo "Cleaning up some stuff"
-
-
-   - name: publish_svc_build_demo
+            
+      - name: publish_svc_build_demo
         type: PublishBuildInfo
         configuration:
           inputSteps:

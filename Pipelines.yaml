@@ -21,7 +21,7 @@ pipelines:
         type: GradleBuild
         configuration:
           gradleCommand:        clean artifactoryPublish -b build.gradle
-          sourceLocation:       $res_orbitera_gitRepo_demo_resourcePath/tutorial/step1-create-gradle-app
+          sourceLocation:       tutorial/step1-create-gradle-app
           configFileLocation:   .
           configFileName:       gradle.properties
           forceXrayScan:        false
@@ -34,8 +34,9 @@ pipelines:
             - name: art
         execution:
           onStart:
-            - ls -ltr 
+            - cd $res_orbitera_gitRepo_demo_resourcePath
             - pwd
+            - ls -ltr
           onSuccess:
             - echo "Job well done!"
           onFailure:

@@ -21,11 +21,11 @@ pipelines:
         type: GradleBuild
         configuration:
           runtime:
-          type: image
-          image:
-           custom:
-            name: drydock/u18java
-            tag: master
+            type: image
+            image:
+             custom:
+              name: drydock/u18java
+              tag: master
           gradleCommand:        clean artifactoryPublish -b build.gradle
           sourceLocation:       tutorial/step1-create-gradle-app
           configFileLocation:   .

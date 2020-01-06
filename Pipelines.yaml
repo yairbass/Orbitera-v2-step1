@@ -20,6 +20,12 @@ pipelines:
       - name: gradle_bld_svc_demo
         type: GradleBuild
         configuration:
+          runtime:
+          type: image
+          image:
+           custom:
+            name: drydock/u18java
+            tag: master
           gradleCommand:        clean artifactoryPublish -b build.gradle
           sourceLocation:       tutorial/step1-create-gradle-app
           configFileLocation:   .

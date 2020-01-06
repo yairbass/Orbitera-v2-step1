@@ -22,7 +22,7 @@ pipelines:
         configuration:
           gradleCommand:        clean artifactoryPublish -b build.gradle
           sourceLocation:       tutorial/step1-create-gradle-app
-          configFileLocation:   .
+          configFileLocation:   jfrog-gradle.yml
           configFileName:       gradle.properties
           forceXrayScan:        false
           autoPublishBuildInfo: true

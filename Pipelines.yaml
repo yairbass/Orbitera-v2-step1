@@ -25,7 +25,7 @@ resources:
 
 
 pipelines:
-  - name: GradleBuild
+  - name: gradle_build
     steps:
       - name: gradle_bld_svc_demo
         type: GradleBuild
@@ -80,10 +80,6 @@ pipelines:
 #           onCancel:
 #             - echo "Someone cancelled the job"
 
-
-
-
-  
   - name: NPM
     steps:
       - name: npm_build
@@ -95,40 +91,36 @@ pipelines:
               custom:
                 name: docker.bintray.io/jfrog/pipelines-u18node
                 tag: "10.16.3"
-          #inherits from bash
-          # for payloadType npm:
-          npmArgs:   npm-install
+          npmArgs:   install shelljs
           repositoryName:   team1-npm
           sourceLocation:   tutorial/step2-create-ui-pkg
           integrations:
             - name: art
           inputResources:
-            - name: orbitera_gitRepo_demo       # required
+            - name: orbitera_gitRepo_demo
         execution:
           onStart:
-            - npm install shelljs
+            - printenv
           onSuccess:
-            - echo "Job well done!"
+            - jfrog rt npm-install team1-npm --build-name=npm_build --build-number="${build_number}"
           onFailure:
             - echo "uh oh, something went wrong"
-          onComplete:                                  #always
+          onComplete:
             - echo "Cleaning up some stuff"
 
 
-      - name: Publish
+      - name: npm_publish
         type: NpmPublish
         configuration:
-          # for payloadType npm:
-          repositoryName:       team1-npm        # required, npm repository name on artifactory
-          forceXrayScan:        false    # optional
-          autoPublishBuildInfo: true       # optional
+          repositoryName:       team1-npm
+          forceXrayScan:        false
+          autoPublishBuildInfo: true
           integrations:
-            - name: art     # required
+            - name: art
           inputSteps:
-            - name: npm_build               # required
+            - name: npm_build
           outputResources:
-            - name: npmBuildInfo               # optional
-
+            - name: npmBuildInfo
         execution:
           onStart:
             - echo "Preparing for work..."

@@ -30,7 +30,7 @@ pipelines:
           sourceLocation:       tutorial/step1-create-gradle-app
           configFileLocation:   .
           configFileName:       jfrog-gradle.yml
-          forceXrayScan:        false
+          forceXrayScan:        true
           autoPublishBuildInfo: true
           inputResources:
             - name: orbitera_gitRepo_demo

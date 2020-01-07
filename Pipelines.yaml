@@ -64,7 +64,7 @@ pipelines:
           waitUntilFinish: true
           inputResources:
             - name: gradleBuildInfo        
-              trigger: false
+              trigger: true
         execution:
           onStart:
             - echo "Preparing to scan artifacts..."

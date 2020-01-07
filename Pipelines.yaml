@@ -15,6 +15,14 @@ resources:
       buildNumber: 1
 
 
+ - name: npmBuildInfo
+   type: BuildInfo
+   configuration:
+     sourceArtifactory: art
+     buildName: npm_build
+     buildNumber: 1
+
+
 
 pipelines:
   - name: GradleBuild
@@ -76,9 +84,9 @@ pipelines:
 
 
   
-  - name: Npm
+  - name: npm_build
     steps:
-      - name: NpmBuild
+      - name: Build
         type: NpmBuild
         configuration:
           runtime:
@@ -104,4 +112,29 @@ pipelines:
           onFailure:
             - echo "uh oh, something went wrong"
           onComplete:                                  #always
+            - echo "Cleaning up some stuff"
+
+
+      - name: Publish
+        type: NpmPublish
+        configuration:
+          # for payloadType npm:
+          repositoryName:       team1-npm        # required, npm repository name on artifactory
+          forceXrayScan:        false    # optional
+          autoPublishBuildInfo: true       # optional
+          integrations:
+            - name: art     # required
+          inputSteps:
+            - name: npm_build               # required
+          outputResources:
+            - name: npmBuildInfo               # optional
+
+        execution:
+          onStart:
+            - echo "Preparing for work..."
+          onSuccess:
+            - echo "Job well done!"
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete: #always
             - echo "Cleaning up some stuff"

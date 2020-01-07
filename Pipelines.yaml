@@ -14,12 +14,6 @@ resources:
       buildName: gradle_build
       buildNumber: 1
       
-  - name: gradleXrayBuildInfo
-    type: BuildInfo
-    configuration:
-      sourceArtifactory: art
-      buildName: gradle_build
-      buildNumber: 1
 
 pipelines:
   - name: GradleBuild

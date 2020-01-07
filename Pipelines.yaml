@@ -82,11 +82,11 @@ pipelines:
         type: NpmBuild
         configuration:
         runtime:
-                    type: image
-                    image:
-                     custom:
-                      name: docker.bintray.io/jfrog/pipelines-u18npm
-                      tag: "10"
+          type: image
+          image:
+            custom:
+              name: docker.bintray.io/jfrog/pipelines-u18npm
+              tag: "10"
           #inherits from bash
           # for payloadType npm:
           npmArgs:   npm-install

@@ -42,23 +42,14 @@ pipelines:
           onStart:
             - export artifactory_plugins_url="${int_art_url}"/jcenter-gradle-remote
             - export artifactory_libs_url="${int_art_url}"/team1-gradle
-            - export artifactory_user="${int_art_user}"
-            - export artifactory_password="${int_art_apikey}"
-            - printenv
           onSuccess:
             - echo "Job well done!"
           onFailure:
-            - jfrog rt config show
+            - echo "Something went terribly wrong"
           onComplete: #always
             - echo "Cleaning up some stuff"
             
-#       - name: publish_svc_build_demo
-#         type: PublishBuildInfo
-#         configuration:
-#           inputSteps:
-#             - name: gradleBuildInfo
-#           outputResources:
-#             - name: svc_build_info_demo
+
 
 
 

@@ -84,9 +84,9 @@ pipelines:
 
 
   
-  - name: npm_build
+  - name: NPM
     steps:
-      - name: Build
+      - name: npm_build
         type: NpmBuild
         configuration:
           runtime:

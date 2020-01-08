@@ -91,7 +91,7 @@ pipelines:
               custom:
                 name: docker.bintray.io/jfrog/pipelines-u18node
                 tag: "10.16.3"
-          npmArgs:   install shelljs
+          npmArgs:   install
           repositoryName:   team1-npm
           sourceLocation:   tutorial/step2-create-ui-pkg
           integrations:
@@ -100,9 +100,9 @@ pipelines:
             - name: orbitera_gitRepo_demo
         execution:
           onStart:
-            - printenv
+            - npm install shelljs
           onSuccess:
-            - jfrog rt npm-install team1-npm --build-name=npm_build --build-number="${build_number}"
+#             - jfrog rt npm-install team1-npm --build-name=npm_build --build-number="${build_number}"
           onFailure:
             - echo "uh oh, something went wrong"
           onComplete:

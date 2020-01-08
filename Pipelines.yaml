@@ -100,7 +100,7 @@ pipelines:
           copy:                 True
           inputSteps:
             - name: gradle_scan
-              trigger: true
+              
           inputResources:
             - name:    gradleBuildInfo    # optional
               

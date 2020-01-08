@@ -13,6 +13,13 @@ resources:
       sourceArtifactory: art
       buildName: gradle_build
       buildNumber: 1
+      
+  - name: promoted_gradleBuild_Info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: art
+      buildName: gradle_promote
+      buildNumber: 1
 
 
   - name: npmBuildInfo
@@ -79,6 +86,25 @@ pipelines:
             - echo "Cleaning up some stuff"
           onCancel:
             - echo "Someone cancelled the job"
+            
+            
+            
+      - name: gradle_promote
+        type: PromoteBuild
+        configuration:
+          #inherits from bash
+          targetRepository:      team1-gradle-staging-us 
+          includeDependencies:   True   
+          status:                Passed
+          comment:               Artifact passed Xray Scan
+          copy:                 True
+          inputResources:
+            - name:    gradleBuildInfo    # optional
+              trigger: true
+          outputResources:
+             - name: promoted_gradleBuild_Info
+ 
+       
 
   - name: NPM
     steps:

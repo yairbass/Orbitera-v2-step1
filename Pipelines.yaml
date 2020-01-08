@@ -98,9 +98,12 @@ pipelines:
           status:                Passed
           comment:               Artifact passed Xray Scan
           copy:                 True
+          inputSteps:
+            - name: gradle_scan
+              trigger: true
           inputResources:
             - name:    gradleBuildInfo    # optional
-              trigger: true
+              
           outputResources:
              - name: promoted_gradleBuild_Info
  

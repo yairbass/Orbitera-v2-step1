@@ -109,24 +109,24 @@ pipelines:
             - echo "Cleaning up some stuff"
 
 
-#       - name: npm_publish
-#         type: NpmPublish
-#         configuration:
-#           repositoryName:       team1-npm
-#           forceXrayScan:        false
-#           autoPublishBuildInfo: true
-#           integrations:
-#             - name: art
-#           inputSteps:
-#             - name: npm_build
-#           outputResources:
-#             - name: npmBuildInfo
-#         execution:
-#           onStart:
-#             - echo "Preparing for work..."
-#           onSuccess:
-#             - echo "Job well done!"
-#           onFailure:
-#             - echo "uh oh, something went wrong"
-#           onComplete: #always
-#             - echo "Cleaning up some stuff"
+      - name: npm_publish
+        type: NpmPublish
+        configuration:
+          repositoryName:       team1-npm
+          forceXrayScan:        false
+          autoPublishBuildInfo: true
+          integrations:
+            - name: art
+          inputSteps:
+            - name: npm_build
+          outputResources:
+            - name: npmBuildInfo
+        execution:
+          onStart:
+            - echo "Preparing for work..."
+          onSuccess:
+            - echo "Job well done!"
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete: #always
+            - echo "Cleaning up some stuff"

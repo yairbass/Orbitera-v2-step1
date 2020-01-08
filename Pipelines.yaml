@@ -94,7 +94,7 @@ pipelines:
         configuration:
           #inherits from bash
           targetRepository:      team1-gradle-staging-us 
-          includeDependencies:   True   
+          includeDependencies:   False   
           status:                Passed
           comment:               Artifact passed Xray Scan
           copy:                 True

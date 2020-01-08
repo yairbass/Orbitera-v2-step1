@@ -102,7 +102,7 @@ pipelines:
           onStart:
             - npm install shelljs
           onSuccess:
-#             - jfrog rt npm-install team1-npm --build-name=npm_build --build-number="${build_number}"
+            - echo "Job finished succesfully|
           onFailure:
             - echo "uh oh, something went wrong"
           onComplete:

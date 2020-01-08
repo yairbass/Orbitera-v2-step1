@@ -102,7 +102,7 @@ pipelines:
           onStart:
             - npm install shelljs
           onSuccess:
-            - echo "Job finished succesfully|
+            - echo "Job finished succesfully"
           onFailure:
             - echo "uh oh, something went wrong"
           onComplete:

@@ -54,6 +54,6 @@ resources:
     configuration:
       sourceDistribution:   dist
       name:                 Create_ReleaseBundle
-      version:              1.0
+      version:              1.0.x
       isSigned:             false
 

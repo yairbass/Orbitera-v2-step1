@@ -22,15 +22,6 @@ resources:
       buildNumber: 1
 
 
-  - name: npmBuildInfo
-    type: BuildInfo
-    configuration:
-      sourceArtifactory: art
-      buildName: npm_build
-      buildNumber: 1
-
-
-
 pipelines:
   - name: gradle_build
     steps:

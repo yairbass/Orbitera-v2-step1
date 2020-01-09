@@ -9,11 +9,11 @@ pipelines:
           releaseBundleVersion:     1
           dryRun:                   false   # default false
           sign:                     false   # default false
-          storeAtSourceArtifactory: true    # optional
+          storeAtSourceArtifactory: art    # optional
           description:              RB of gradle and npm build    # optional
           releaseNotes:                         # optional
             content:                demo
-            syntax:                 test    # required in releaseNotes
+            syntax:                 plain_text    # required in releaseNotes
 
           inputResources:
             - name:                promoted_gradleBuild_Info 

@@ -68,7 +68,9 @@ pipelines:
           inputResources:
             - name:    scanned_gradleBuild_Info    # optional
               trigger: true       
-       
+          outputResources:
+            - name: Promoted_gradleBuild_Info
+              
  
        
 

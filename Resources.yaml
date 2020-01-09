@@ -14,11 +14,18 @@ resources:
       buildName: gradle_build
       buildNumber: 1
       
-  - name: promoted_gradleBuild_Info
+  - name: Scanned_gradleBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
-      buildName: gradle_promote
+      buildName: gradle_scan
+      buildNumber: 1
+
+  - name: npmBuildInfo
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: art
+      buildName: npm_build
       buildNumber: 1
 
 

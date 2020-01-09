@@ -17,7 +17,7 @@ resources:
 
 
 pipelines:
-- name: NPM
+  - name: NPM
     steps:
       - name: npm_build
         type: NpmBuild

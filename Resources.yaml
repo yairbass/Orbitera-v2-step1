@@ -52,8 +52,8 @@ resources:
   - name:      ReleaseBundle_Resource
     type:       ReleaseBundle
     configuration:
-      sourceDistribution:   distributionIntegration
+      sourceDistribution:   dist
       name:                 Create_ReleaseBundle
-      version:              1
+      version:              1.0
       isSigned:             false
 

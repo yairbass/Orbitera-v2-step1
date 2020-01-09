@@ -1,22 +1,22 @@
 - name:    ReleaseBundle
     steps:
-    - name: Create_ReleaseBundle
-      type: CreateReleaseBundle
-      configuration:
-          #inherits from bash
-        releaseBundleName:        Demo_RB
-        releaseBundleVersion:     1
-        dryRun:                   false   # default false
-        sign:                     false   # default false
-        storeAtSourceArtifactory: true    # optional
-        description:              RB of gradle and npm build    # optional
-        releaseNotes:                         # optional
-          content:                demo
-          syntax:                 test    # required in releaseNotes
+        - name: Create_ReleaseBundle
+          type: CreateReleaseBundle
+          configuration:
+              #inherits from bash
+            releaseBundleName:        Demo_RB
+            releaseBundleVersion:     1
+            dryRun:                   false   # default false
+            sign:                     false   # default false
+            storeAtSourceArtifactory: true    # optional
+            description:              RB of gradle and npm build    # optional
+            releaseNotes:                         # optional
+              content:                demo
+              syntax:                 test    # required in releaseNotes
 
-        inputResources:
-        - name:                promoted_gradleBuild_Info 
-        - name:                promoted_npmBuild_Info     
+            inputResources:
+            - name:                promoted_gradleBuild_Info 
+            - name:                promoted_npmBuild_Info     
 
-        outputResources:
-        - name:                 ReleaseBundle_Resource
+            outputResources:
+            - name:                 ReleaseBundle_Resource

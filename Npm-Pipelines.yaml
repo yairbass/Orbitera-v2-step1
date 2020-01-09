@@ -1,1 +1,51 @@
-"
+ - name: NPM
+    steps:
+      - name: npm_build
+        type: NpmBuild
+        configuration:
+          runtime:
+            type: image
+            image:
+              custom:
+                name: docker.bintray.io/jfrog/pipelines-u18node
+                tag: "10.16.3"
+          npmArgs:   install
+          repositoryName:   team1-npm
+          sourceLocation:   tutorial/step2-create-ui-pkg
+          integrations:
+            - name: art
+          inputResources:
+            - name: orbitera_gitRepo_demo
+        execution:
+          onStart:
+            - npm install shelljs
+          onSuccess:
+            - echo "Job finished succesfully"
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete:
+            - echo "Cleaning up some stuff"
+
+
+      - name: npm_publish
+        type: NpmPublish
+        configuration:
+          repositoryName:       team1-npm
+          forceXrayScan:        false
+          autoPublishBuildInfo: true
+          integrations:
+            - name: art
+          inputSteps:
+            - name: npm_build
+          outputResources:
+            - name: npmBuildInfo
+        execution:
+          onStart:
+            - echo "Preparing for work..."
+          onSuccess:
+            - echo "Job well done!"
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete: #always
+            - echo "Cleaning up some stuff"
+

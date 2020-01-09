@@ -14,14 +14,14 @@ resources:
       buildName: gradle_build
       buildNumber: 1
       
-  - name: Scanned_gradleBuild_Info
+  - name: scanned_gradleBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
       buildName: gradle_scan
       buildNumber: 1
       
-  - name: Promoted_gradleBuild_Info
+  - name: promoted_gradleBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art

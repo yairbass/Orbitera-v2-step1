@@ -1,11 +1,5 @@
 resources:
-  - name: orbitera_gitRepo_npm
-    type: GitRepo
-    configuration:
-      path: yairbass/project-examples
-      gitProvider: YairBassGitHub
-      branches:
-        include: eplus-v2-orbitera
+
   - name: npmBuildInfo
     type: BuildInfo
     configuration:
@@ -33,7 +27,7 @@ pipelines:
           integrations:
             - name: art
           inputResources:
-            - name: orbitera_gitRepo_npm
+            - name: orbitera_gitRepo_demo
         execution:
           onStart:
             - npm install shelljs

@@ -42,8 +42,8 @@ pipelines:
           inputResources:
             - name: gradleBuildInfo        
               trigger: true
-          outputResources: scanned_gradleBuild_Info
-            - name:
+          outputResources: 
+            - name: scanned_gradleBuild_Info
         execution:
           onStart:
             - echo "Preparing to scan artifacts..."

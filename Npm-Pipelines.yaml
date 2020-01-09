@@ -1,4 +1,23 @@
- - name: NPM
+resources:
+  - name: orbitera_gitRepo_demo
+    type: GitRepo
+    configuration:
+      path: yairbass/project-examples
+      gitProvider: YairBassGitHub
+      branches:
+        include: eplus-v2-orbitera
+
+  - name: npmBuildInfo
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: art
+      buildName: npm_build
+      buildNumber: 1
+
+
+
+pipelines:
+- name: NPM
     steps:
       - name: npm_build
         type: NpmBuild

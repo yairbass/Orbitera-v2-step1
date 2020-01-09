@@ -35,4 +35,16 @@ resources:
       buildName: npm_build
       buildNumber: 1
 
-
+  - name: scanned_npmBuild_Info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: art
+      buildName: npm_scan
+      buildNumber: 1
+      
+  - name: promoted_npmBuild_Info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: art
+      buildName: npm_promote
+      buildNumber: 1

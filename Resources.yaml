@@ -48,3 +48,12 @@ resources:
       sourceArtifactory: art
       buildName: npm_promote
       buildNumber: 1
+      
+  - name:      ReleaseBundle_Resource
+    type:       ReleaseBundle
+    configuration:
+      sourceDistribution:   distributionIntegration
+      name:                 Create_ReleaseBundle
+      version:              1
+      isSigned:             false
+

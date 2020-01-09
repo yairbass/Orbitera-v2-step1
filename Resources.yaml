@@ -20,6 +20,13 @@ resources:
       sourceArtifactory: art
       buildName: gradle_scan
       buildNumber: 1
+      
+  - name: Promoted_gradleBuild_Info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: art
+      buildName: gradle_promote
+      buildNumber: 1
 
   - name: npmBuildInfo
     type: BuildInfo

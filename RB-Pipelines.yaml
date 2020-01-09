@@ -6,7 +6,7 @@ pipelines:
         configuration:
               #inherits from bash
           releaseBundleName:        Demo_RB
-          releaseBundleVersion:     1
+          releaseBundleVersion:     1.0
           dryRun:                   false   # default false
           sign:                     false   # default false
           storeAtSourceArtifactory: art    # optional

@@ -69,7 +69,7 @@ pipelines:
             - name:    scanned_gradleBuild_Info    # optional
               trigger: true       
           outputResources:
-            - name: Promoted_gradleBuild_Info
+            - name: promoted_gradleBuild_Info
               
  
        

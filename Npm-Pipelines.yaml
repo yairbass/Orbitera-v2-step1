@@ -50,3 +50,30 @@ pipelines:
           onComplete: #always
             - echo "Cleaning up some stuff"
 
+      - name: npm_scan
+        type: XrayScan
+        configuration:
+          #inherits from bash
+          waitUntilFinish: true
+          inputResources:
+            - name: npmBuildInfo        
+              trigger: true
+          outputResources: 
+            - name: scanned_npmBuild_Info
+       
+         
+            
+                     
+      - name: npm_promote
+        type: PromoteBuild
+        configuration:
+          targetRepository:      team1-npm-staging-us 
+          includeDependencies:   false   
+          status:                Passed
+          comment:               Artifact passed Xray Scan
+          copy:                  true
+          inputResources:
+            - name:    scanned_npmBuild_Info    # optional
+              trigger: true       
+          outputResources:
+            - name: promoted_npmBuild_Info

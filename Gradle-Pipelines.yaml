@@ -83,7 +83,7 @@ pipelines:
             - name: gradle_fileSpec
           integrations:
             - name: art
-       execution:
+        execution:
           onStart:
             - mkdir -t tutorial/step1-create-gradle-app/package
           onSuccess:

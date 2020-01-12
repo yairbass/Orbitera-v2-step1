@@ -7,6 +7,29 @@ resources:
       branches:
         include: eplus-v2-orbitera
 
+
+  - name:       gradle_fileSpec
+    type:       FileSpec
+    configuration:     
+      sourceArtifactory:    art
+      pattern:              *.jar
+      target:               tutorial/step1-create-gradle-app/package  
+      archiveEntries:       <string>   # optional
+      buildName:            gradle_build   # optional
+      buildNumber:          $run_number 
+      
+  - name:       npm_fileSpec
+    type:       FileSpec
+    configuration:     
+      sourceArtifactory:    art
+      pattern:              *.tgz
+      target:               tutorial/step2-create-npm-app/package  
+      archiveEntries:       <string>   # optional
+      buildName:            NPM   # optional
+      buildNumber:          $run_number 
+      
+
+
   - name: gradleBuildInfo
     type: BuildInfo
     configuration:

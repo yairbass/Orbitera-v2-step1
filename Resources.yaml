@@ -16,7 +16,7 @@ resources:
       target:               tutorial/step3-create-docker-multi-app/package/*.jar
 
       buildName:            Gradle   # optional
-      buildNumber:          $run_number 
+      buildNumber:          ${run_number}
 
 
   - name:       npm_fileSpec
@@ -26,7 +26,7 @@ resources:
       pattern:              team1-npm-dev-us/frogsui/-/frogsui-0.3.0.tgz
       target:               tutorial/step3-create-docker-multi-app/package/*.tar.gz
       buildName:            Npm   # optional
-      buildNumber:          $run_number 
+      buildNumber:          ${run_number}
       
 
 
@@ -35,55 +35,55 @@ resources:
     configuration:
       sourceArtifactory: art
       buildName: Gradle
-      buildNumber: $run_number
+      buildNumber: ${run_number}
       
   - name: scanned_gradleBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
       buildName: Gradle
-      buildNumber: $run_number
+      buildNumber: ${run_number}
       
   - name: promoted_gradleBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
       buildName: gradle_promote
-      buildNumber: $run_number
+      buildNumber: ${run_number}
 
   - name: docker_gradleBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
       buildName: Gradle_docker_push
-      buildNumber: $run_number
+      buildNumber: ${run_number}
 
   - name: npmBuildInfo
     type: BuildInfo
     configuration:
       sourceArtifactory: art
       buildName: Npm
-      buildNumber: $run_number
+      buildNumber: ${run_number}
 
   - name: scanned_npmBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
       buildName: Npm
-      buildNumber: $run_number
+      buildNumber: ${run_number}
       
   - name: promoted_npmBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
       buildName: Npm
-      buildNumber: $run_number
+      buildNumber: ${run_number}
       
   - name:      ReleaseBundle_Resource
     type:       ReleaseBundle
     configuration:
       sourceDistribution:   dist
       name:                 Create_ReleaseBundle
-      version:              1.0.$run_number
+      version:              1.0.${run_number}
       isSigned:             false
 

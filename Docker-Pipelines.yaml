@@ -4,7 +4,7 @@ pipelines:
      - name: Gradle_docker_build
        type: DockerBuild
        configuration:
-         dockerFileLocation: tutorial/step1-create-gradle-app
+         dockerFileLocation: tutorial/step3-create-docker-multi-app
          dockerFileName: Dockerfile
          dockerImageName: GradleDoc
          dockerImageTag: $run_number

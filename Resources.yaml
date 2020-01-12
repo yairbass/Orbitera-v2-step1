@@ -52,11 +52,11 @@ resources:
       buildNumber: $run_number
 
   - name: docker_gradleBuild_Info
-      type: BuildInfo
-      configuration:
-        sourceArtifactory: art
-        buildName: Gradle_docker_push
-        buildNumber: $run_number
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: art
+      buildName: Gradle_docker_push
+      buildNumber: $run_number
 
   - name: npmBuildInfo
     type: BuildInfo

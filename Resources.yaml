@@ -14,8 +14,7 @@ resources:
       sourceArtifactory:    art
       pattern:              team1-gradle-dev-us/com/jfrog/frogsws/0.1.0-$run_number/frogsws-0.1.0-*.jar
       target:               tutorial/step3-create-docker-multi-app/package
-      archiveEntries:       <string>   # optional
-      buildName:            gradle_build   # optional
+      buildName:            Gradle   # optional
       buildNumber:          $run_number 
 
 
@@ -25,8 +24,7 @@ resources:
       sourceArtifactory:    art
       pattern:              team1-npm-dev-us/frogsui/-/frogsui-0.3.0.tgz
       target:               tutorial/step3-create-docker-multi-app/package
-      archiveEntries:       <string>   # optional
-      buildName:            NPM   # optional
+      buildName:            Npm   # optional
       buildNumber:          $run_number 
       
 

@@ -1,5 +1,5 @@
 pipelines:
-  - name: gradle_build
+  - name: Gradle
     steps:
       - name: gradle_bld_svc_demo
         type: GradleBuild

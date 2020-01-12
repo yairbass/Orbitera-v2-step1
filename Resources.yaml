@@ -12,7 +12,7 @@ resources:
     type:       FileSpec
     configuration:     
       sourceArtifactory:    art
-      pattern:              *.jar
+      pattern:              team1-gradle-dev-us/com/jfrog/frogsws/0.1.0-$run_number/frogsws-0.1.0-*.jar
       target:               tutorial/step1-create-gradle-app/package  
       archiveEntries:       <string>   # optional
       buildName:            gradle_build   # optional

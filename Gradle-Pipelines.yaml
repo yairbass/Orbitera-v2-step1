@@ -1,5 +1,12 @@
 pipelines:
   - name: Gradle
+    configuration:
+      environmentVariables:
+        Version: 1.0.$run_number
+        dockerImage: 35.186.203.87/gradle-app
+
+
+
     steps:
       - name: gradle_bld_svc_demo
         type: GradleBuild
@@ -78,8 +85,8 @@ pipelines:
         configuration:
           dockerFileLocation: tutorial/step3-create-docker-multi-app
           dockerFileName: Dockerfile
-          dockerImageName: 35.186.203.87/gradle-app
-          dockerImageTag: 1.0.$run_number
+          dockerImageName: $dockerImage
+          dockerImageTag: $Version
           inputResources:
             - name: orbitera_gitRepo_demo
             - name: gradle_fileSpec
@@ -101,14 +108,14 @@ pipelines:
         type: DockerPush
         configuration:
           targetRepository:     team1-docker-dev-us     # required
-          forceXrayScan:        true       # default false
-          autoPublishBuildInfo: true       # default fals
+          forceXrayScan:        true
+          autoPublishBuildInfo: true
           integrations:
-            - name:             art
+            - name:  art
           inputSteps:
-            - name:            Gradle_docker_build         # required
+            - name: Gradle_docker_build         # required
           outputResources:
-            - name:            docker_gradleBuild_Info     # required if autoPublishBuildInfo is true
+            - name: docker_gradleBuild_Info     # required if autoPublishBuildInfo is true
  
        
 

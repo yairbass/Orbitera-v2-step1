@@ -2,8 +2,9 @@ pipelines:
   - name: Gradle
     configuration:
       environmentVariables:
-        Version: 1.0.$run_number
-        dockerImage: 35.186.203.87/gradle-app
+        readOnly:
+          Version: 1.0.$run_number
+          dockerImage: 35.186.203.87/gradle-app
 
 
 

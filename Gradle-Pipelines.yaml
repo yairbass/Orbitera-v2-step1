@@ -70,8 +70,45 @@ pipelines:
               trigger: true       
           outputResources:
             - name: promoted_gradleBuild_Info
-              
 
+
+
+      - name: Gradle_docker_build
+        type: DockerBuild
+        configuration:
+          dockerFileLocation: tutorial/step3-create-docker-multi-app
+          dockerFileName: Dockerfile
+          dockerImageName: 35.186.203.87/gradle-app
+          dockerImageTag: 1.0.x
+          inputResources:
+            - name: orbitera_gitRepo_demo
+            - name: gradle_fileSpec
+            - name: promoted_gradleBuild_Info
+              trigger: true
+          integrations:
+            - name: art
+        execution:
+          onStart:
+            - mkdir -p tutorial/step3-create-docker-multi-app/package
+          onSuccess:
+            - ls tutorial/step3-create-docker-multi-app/package
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete: #always
+            - echo "Cleaning up some stuff"
+
+      - name: Gradle_docker_push
+        type: DockerPush
+        configuration:
+          targetRepository:     team1-docker-dev      # required
+          forceXrayScan:        true       # default false
+          autoPublishBuildInfo: true       # default fals
+          integrations:
+            - name:             art
+          inputSteps:
+            - name:            Gradle_docker_build         # required
+          outputResources:
+            - name:            docker_gradleBuild_Info     # required if autoPublishBuildInfo is true
  
        
 

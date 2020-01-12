@@ -6,8 +6,8 @@ pipelines:
        configuration:
          dockerFileLocation: tutorial/step3-create-docker-multi-app
          dockerFileName: Dockerfile
-         dockerImageName: ${int_art_url}/team1-docker/gradle-app
-         dockerImageTag: 1.0.X
+         dockerImageName: 35.186.203.87/gradle-app
+         dockerImageTag: $run_number
          inputResources:
            - name: orbitera_gitRepo_demo
            - name: gradle_fileSpec

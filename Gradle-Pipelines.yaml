@@ -4,7 +4,7 @@ pipelines:
       environmentVariables:
         readOnly:
           Version: 1.0.$run_number
-          dockerImage: 35.186.203.87/gradle-app
+          dockerImage: 35.186.203.87/team1-docker/gradle-app
 
 
 
@@ -109,7 +109,7 @@ pipelines:
       - name: Gradle_docker_push
         type: DockerPush
         configuration:
-          targetRepository:     team1-docker-dev-us     # required
+          targetRepository:     team1-docker     # required
           forceXrayScan:        true
           autoPublishBuildInfo: true
           integrations:

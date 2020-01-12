@@ -12,7 +12,7 @@ resources:
     type:       FileSpec
     configuration:     
       sourceArtifactory:    art
-      pattern:              team1-gradle-dev-us/com/jfrog/frogsws/0.1.0-$run_number/frogsws-0.1.0-*.jar
+      pattern:              team1-gradle-dev-us/com/jfrog/frogsws/0.1.0-20/frogsws-0.1.0-20.jar
       target:               tutorial/step3-create-docker-multi-app/package
       buildName:            Gradle   # optional
       buildNumber:          $run_number 
@@ -33,14 +33,14 @@ resources:
     type: BuildInfo
     configuration:
       sourceArtifactory: art
-      buildName: gradle_build
+      buildName: Gradle
       buildNumber: $run_number
       
   - name: scanned_gradleBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
-      buildName: gradle_scan
+      buildName: Gradle
       buildNumber: $run_number
       
   - name: promoted_gradleBuild_Info
@@ -54,21 +54,21 @@ resources:
     type: BuildInfo
     configuration:
       sourceArtifactory: art
-      buildName: npm_build
+      buildName: Npm
       buildNumber: $run_number
 
   - name: scanned_npmBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
-      buildName: npm_scan
+      buildName: Npm
       buildNumber: $run_number
       
   - name: promoted_npmBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
-      buildName: npm_promote
+      buildName: Npm
       buildNumber: $run_number
       
   - name:      ReleaseBundle_Resource

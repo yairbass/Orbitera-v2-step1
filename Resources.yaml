@@ -13,17 +13,18 @@ resources:
     configuration:     
       sourceArtifactory:    art
       pattern:              team1-gradle-dev-us/com/jfrog/frogsws/0.1.0-$run_number/frogsws-0.1.0-*.jar
-      target:               tutorial/step1-create-gradle-app/package  
+      target:               tutorial/step3-create-docker-multi-app/package
       archiveEntries:       <string>   # optional
       buildName:            gradle_build   # optional
       buildNumber:          $run_number 
-      
+
+
   - name:       npm_fileSpec
     type:       FileSpec
     configuration:     
       sourceArtifactory:    art
-      pattern:              artifactory/team1-npm-dev-us/frogsui/-/frogsui-0.3.0.tgz
-      target:               tutorial/step2-create-npm-app/package  
+      pattern:              team1-npm-dev-us/frogsui/-/frogsui-0.3.0.tgz
+      target:               tutorial/step3-create-docker-multi-app/package
       archiveEntries:       <string>   # optional
       buildName:            NPM   # optional
       buildNumber:          $run_number 

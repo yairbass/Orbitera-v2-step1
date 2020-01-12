@@ -18,4 +18,4 @@ pipelines:
             - name:                promoted_gradleBuild_Info 
             - name:                promoted_npmBuild_Info     
           outputResources:
-            - name:                 ReleaseBundle_Resource
+            - name:                ReleaseBundle_Resource

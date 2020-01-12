@@ -86,8 +86,8 @@ pipelines:
         configuration:
           dockerFileLocation: tutorial/step3-create-docker-multi-app
           dockerFileName: Dockerfile
-          dockerImageName: $dockerImage
-          dockerImageTag: $Version
+          dockerImageName: dockerImage
+          dockerImageTag: Version
           inputResources:
             - name: orbitera_gitRepo_demo
             - name: gradle_fileSpec

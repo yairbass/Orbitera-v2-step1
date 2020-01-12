@@ -97,6 +97,7 @@ pipelines:
             - name: art
         execution:
           onStart:
+            - printenv
             - mkdir -p tutorial/step3-create-docker-multi-app/package
           onSuccess:
             - ls tutorial/step3-create-docker-multi-app/package

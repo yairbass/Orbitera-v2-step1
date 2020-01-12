@@ -12,7 +12,7 @@ resources:
     configuration:
       sourceArtifactory: art
       buildName: gradle_build
-      buildNumber: 1
+      buildNumber: $run_number
       
   - name: scanned_gradleBuild_Info
     type: BuildInfo

@@ -100,7 +100,7 @@ pipelines:
       - name: Gradle_docker_push
         type: DockerPush
         configuration:
-          targetRepository:     team1-docker-dev      # required
+          targetRepository:     team1-docker-dev-us     # required
           forceXrayScan:        true       # default false
           autoPublishBuildInfo: true       # default fals
           integrations:

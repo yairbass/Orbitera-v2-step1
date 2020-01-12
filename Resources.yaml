@@ -19,41 +19,41 @@ resources:
     configuration:
       sourceArtifactory: art
       buildName: gradle_scan
-      buildNumber: 1
+      buildNumber: $run_number
       
   - name: promoted_gradleBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
       buildName: gradle_promote
-      buildNumber: 1
+      buildNumber: $run_number
 
   - name: npmBuildInfo
     type: BuildInfo
     configuration:
       sourceArtifactory: art
       buildName: npm_build
-      buildNumber: 1
+      buildNumber: $run_number
 
   - name: scanned_npmBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
       buildName: npm_scan
-      buildNumber: 1
+      buildNumber: $run_number
       
   - name: promoted_npmBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
       buildName: npm_promote
-      buildNumber: 1
+      buildNumber: $run_number
       
   - name:      ReleaseBundle_Resource
     type:       ReleaseBundle
     configuration:
       sourceDistribution:   dist
       name:                 Create_ReleaseBundle
-      version:              1.0.x
+      version:              1.0.$run_number
       isSigned:             false
 

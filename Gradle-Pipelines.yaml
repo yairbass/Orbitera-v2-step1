@@ -80,6 +80,7 @@ pipelines:
           dockerImageTag: $run_number
           inputResources:
             - name: orbitera_gitRepo_demo
+            - name: gradle_fileSpec
           integrations:
             - name: art
        execution:

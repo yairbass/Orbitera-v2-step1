@@ -22,7 +22,7 @@ resources:
     type:       FileSpec
     configuration:     
       sourceArtifactory:    art
-      pattern:              *.tgz
+      pattern:              artifactory/team1-npm-dev-us/frogsui/-/frogsui-0.3.0.tgz
       target:               tutorial/step2-create-npm-app/package  
       archiveEntries:       <string>   # optional
       buildName:            NPM   # optional

@@ -11,6 +11,7 @@ pipelines:
          inputResources:
            - name: orbitera_gitRepo_demo
            - name: gradle_fileSpec
+           - name: npm_fileSpec
            - name: promoted_gradleBuild_Info
              trigger: true
          integrations:

@@ -2,20 +2,20 @@ pipelines:
   - name: Docker
     steps:
      - name: Gradle_docker_build
-      type: DockerBuild
-      configuration:
-        dockerFileLocation: tutorial/step1-create-gradle-app
-        dockerFileName: Dockerfile
-        dockerImageName: GradleDoc
-        dockerImageTag: $run_number
-        inputResources:
-          - name: orbitera_gitRepo_demo
-          - name: gradle_fileSpec
-          - name: promoted_gradleBuild_Info
-            trigger: true
-        integrations:
-          - name: art
-      execution:
+       type: DockerBuild
+       configuration:
+         dockerFileLocation: tutorial/step1-create-gradle-app
+         dockerFileName: Dockerfile
+         dockerImageName: GradleDoc
+         dockerImageTag: $run_number
+         inputResources:
+           - name: orbitera_gitRepo_demo
+           - name: gradle_fileSpec
+           - name: promoted_gradleBuild_Info
+             trigger: true
+         integrations:
+           - name: art
+       execution:
         onStart:
           - mkdir -p tutorial/step3-create-docker-multi-app/package
         onSuccess:

@@ -12,7 +12,7 @@ resources:
     type:       FileSpec
     configuration:     
       sourceArtifactory:    art
-      pattern:              team1-gradle-dev-us/com/jfrog/frogsws/0.1.0-20/frogsws-0.1.0-20.jar
+      pattern:              team1-gradle-dev-us/com/jfrog/frogsws/0.1.0-${run_number}/frogsws-0.1.0-${run_number}.jar
       target:               tutorial/step3-create-docker-multi-app/package/*.jar
 
       buildName:            Gradle   # optional

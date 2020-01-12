@@ -6,8 +6,6 @@ pipelines:
           Version: 1.0.$run_number
           dockerImage: 35.186.203.87/team1-docker/gradle-app
 
-
-
     steps:
       - name: gradle_bld_svc_demo
         type: GradleBuild
@@ -110,7 +108,7 @@ pipelines:
         type: DockerPush
         configuration:
           targetRepository:     team1-docker     # required
-          forceXrayScan:        true
+          forceXrayScan:        false
           autoPublishBuildInfo: true
           integrations:
             - name:  art

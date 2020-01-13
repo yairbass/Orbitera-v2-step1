@@ -29,7 +29,6 @@ resources:
       buildNumber:          ${run_number}
       
 
-
   - name: gradleBuildInfo
     type: BuildInfo
     configuration:
@@ -48,15 +47,22 @@ resources:
     type: BuildInfo
     configuration:
       sourceArtifactory: art
-      buildName: gradle_promote
+      buildName: Gradle
       buildNumber: ${run_number}
 
   - name: docker_gradleBuild_Info
     type: BuildInfo
     configuration:
       sourceArtifactory: art
-      buildName: Gradle_docker_push
+      buildName: Gradle
       buildNumber: ${run_number}
+
+  - name: ddocker_npmBuild_Info
+      type: BuildInfo
+      configuration:
+        sourceArtifactory: art
+        buildName: Npm
+        buildNumber: ${run_number}
 
   - name: npmBuildInfo
     type: BuildInfo

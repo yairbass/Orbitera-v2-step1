@@ -1,5 +1,10 @@
 pipelines:
   - name: Npm
+    configuration:
+      environmentVariables:
+        readOnly:
+          Version: 1.0.$run_number
+          dockerImage: 35.186.203.87/team1-docker/Npm-app
     steps:
       - name: npm_build
         type: NpmBuild
@@ -77,3 +82,41 @@ pipelines:
               trigger: true       
           outputResources:
             - name: promoted_npmBuild_Info
+
+      - name: npm_docker_build
+        type: DockerBuild
+        configuration:
+          dockerFileLocation: tutorial/step3-create-docker-multi-app
+          dockerFileName: Dockerfile
+          dockerImageName: ${dockerImage}
+          dockerImageTag: ${Version}
+          inputResources:
+            - name: orbitera_gitRepo_demo
+            - name: npm_fileSpec
+            - name: promoted_npmBuild_Info
+              trigger: true
+          integrations:
+            - name: art
+        execution:
+          onStart:
+
+            - mkdir -p tutorial/step3-create-docker-multi-app/package
+          onSuccess:
+
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete: #always
+            - echo "Cleaning up some stuff"
+
+      - name: Npm_docker_push
+        type: DockerPush
+        configuration:
+          targetRepository:     team1-docker     # required
+          forceXrayScan:        false
+          autoPublishBuildInfo: true
+          integrations:
+            - name:  art
+          inputSteps:
+            - name: Npm_docker_build         # required
+          outputResources:
+            - name: docker_npmBuild_Info     # required if autoPublishBuildInfo is true

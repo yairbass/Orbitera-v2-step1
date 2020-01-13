@@ -90,7 +90,7 @@ resources:
     configuration:
       sourceDistribution:   dist
       name:                 New_ReleaseBundle
-      version:              1.0.${run_number}
+      version:              v1.0.0
       isSigned:             false
 
   - name:       Signed_ReleaseBundle
@@ -98,6 +98,5 @@ resources:
     configuration:
       sourceDistribution:   dist
       name:                 Signed_ReleaseBundle
-      version:              1.0.${run_number}
-      isSigned:             true
+      version:              v1.0.0
 

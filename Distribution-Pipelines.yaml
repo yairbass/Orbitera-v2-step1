@@ -16,7 +16,18 @@ pipelines:
             syntax:                 plain_text    # required in releaseNotes
           inputResources:
             - name:                docker_gradleBuild_Info
-             # trigger: true
             - name:                docker_npmBuild_Info
           outputResources:
-            - name:                ReleaseBundle_Resource
+            - name:                New_ReleaseBundle
+
+
+      - name: Sign_ReleaseBundle
+        type: SignReleaseBundle
+        configuration:
+          inputResources:
+            - name:            ReleaseBundle_Resource # required
+              trigger: false
+          inputSteps:
+            - name:            Create_ReleaseBundle
+          outputResources:
+            - name:            Signed_ReleaseBundle

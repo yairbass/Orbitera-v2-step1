@@ -85,11 +85,19 @@ resources:
       buildName: Npm
       buildNumber: ${run_number}
       
-  - name:      ReleaseBundle_Resource
+  - name:       New_ReleaseBundle
     type:       ReleaseBundle
     configuration:
       sourceDistribution:   dist
-      name:                 Create_ReleaseBundle
+      name:                 New_ReleaseBundle
       version:              1.0.${run_number}
       isSigned:             false
+
+  - name:       Signed_ReleaseBundle
+    type:       ReleaseBundle
+    configuration:
+      sourceDistribution:   dist
+      name:                 Signed_ReleaseBundle
+      version:              1.0.${run_number}
+      isSigned:             true
 

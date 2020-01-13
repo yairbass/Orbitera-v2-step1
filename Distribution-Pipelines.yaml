@@ -5,7 +5,7 @@ pipelines:
         type: CreateReleaseBundle
         configuration:
           releaseBundleName:        Demo_RB
-          releaseBundleVersion:     1.0.${run_number}
+          releaseBundleVersion:     V1.0.${run_number}
           dryRun:                   false
           sign:                     false
           storeAtSourceArtifactory: art
@@ -24,7 +24,7 @@ pipelines:
         type: SignReleaseBundle
         configuration:
           inputResources:
-            - name:            New_ReleaseBundle # required
-              trigger: false
+            - name:    New_ReleaseBundle # required
+              trigger: true
           outputResources:
             - name:            Signed_ReleaseBundle

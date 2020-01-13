@@ -102,6 +102,7 @@ pipelines:
 
             - mkdir -p tutorial/step3-create-docker-multi-app/package
           onSuccess:
+            - echo "Congrats The Docker image was build"
 
           onFailure:
             - echo "uh oh, something went wrong"

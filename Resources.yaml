@@ -58,11 +58,11 @@ resources:
       buildNumber: ${run_number}
 
   - name: ddocker_npmBuild_Info
-      type: BuildInfo
-      configuration:
-        sourceArtifactory: art
-        buildName: Npm
-        buildNumber: ${run_number}
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: art
+      buildName: Npm
+      buildNumber: ${run_number}
 
   - name: npmBuildInfo
     type: BuildInfo

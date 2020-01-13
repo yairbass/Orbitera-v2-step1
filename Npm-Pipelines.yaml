@@ -118,6 +118,6 @@ pipelines:
           integrations:
             - name:  art
           inputSteps:
-            - name: Npm_docker_build         # required
+            - name: npm_docker_build         # required
           outputResources:
             - name: docker_npmBuild_Info     # required if autoPublishBuildInfo is true

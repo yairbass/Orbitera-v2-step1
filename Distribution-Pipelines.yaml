@@ -4,16 +4,15 @@ pipelines:
       - name: Create_ReleaseBundle
         type: CreateReleaseBundle
         configuration:
-              #inherits from bash
           releaseBundleName:        Demo_RB
           releaseBundleVersion:     1.0.${run_number}
-          dryRun:                   false   # default false
-          sign:                     false   # default false
-          storeAtSourceArtifactory: art    # optional
-          description:              RB of gradle and npm build    # optional
-          releaseNotes:                         # optional
+          dryRun:                   false
+          sign:                     false
+          storeAtSourceArtifactory: art
+          description:              RB of gradle and npm build
+          releaseNotes:
             content:                demo
-            syntax:                 plain_text    # required in releaseNotes
+            syntax:                 plain_text
           inputResources:
             - name:                docker_gradleBuild_Info
             - name:                docker_npmBuild_Info
@@ -27,7 +26,5 @@ pipelines:
           inputResources:
             - name:            New_ReleaseBundle # required
               trigger: false
-          inputSteps:
-            - name:            Create_ReleaseBundle
           outputResources:
             - name:            Signed_ReleaseBundle

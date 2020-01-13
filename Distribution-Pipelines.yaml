@@ -15,7 +15,7 @@ pipelines:
             content:                demo
             syntax:                 plain_text    # required in releaseNotes
           inputResources:
-            - name:                promoted_gradleBuild_Info 
-            - name:                promoted_npmBuild_Info     
+            - name:                docker_gradleBuild_Info
+            - name:                docker_npmBuild_Info
           outputResources:
             - name:                ReleaseBundle_Resource

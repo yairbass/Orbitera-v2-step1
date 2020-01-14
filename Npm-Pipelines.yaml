@@ -19,7 +19,7 @@ pipelines:
           repositoryName:   team1-npm
           sourceLocation:   tutorial/step2-create-ui-pkg
           integrations:
-            - name: art
+            - name: artifactory
           inputResources:
             - name: orbitera_gitRepo_demo
         execution:
@@ -40,7 +40,7 @@ pipelines:
           forceXrayScan:        false
           autoPublishBuildInfo: true
           integrations:
-            - name: art
+            - name: artifactory
           inputSteps:
             - name: npm_build
           outputResources:
@@ -96,7 +96,7 @@ pipelines:
             - name: promoted_npmBuild_Info
               trigger: true
           integrations:
-            - name: art
+            - name: artifactory
         execution:
           onStart:
 
@@ -116,7 +116,7 @@ pipelines:
           forceXrayScan:        false
           autoPublishBuildInfo: true
           integrations:
-            - name:  art
+            - name:  artifactory
           inputSteps:
             - name: npm_docker_build         # required
           outputResources:

@@ -4,7 +4,7 @@ pipelines:
       environmentVariables:
         readOnly:
           Version: 1.0.$run_number
-          dockerImage: 35.186.203.87/team1-docker/gradle-app
+          dockerImage: http://34.107.168.13/team1-docker/gradle-app
 
     steps:
       - name: gradle_bld_svc_demo
@@ -27,7 +27,7 @@ pipelines:
           outputResources:
             - name: gradleBuildInfo
           integrations:
-            - name: art
+            - name: artifactory
         execution:
           onStart:
             - export artifactory_plugins_url="${int_art_url}"/jcenter-gradle-remote
@@ -92,7 +92,7 @@ pipelines:
             - name: promoted_gradleBuild_Info
               trigger: true
           integrations:
-            - name: art
+            - name: artifactory
         execution:
           onStart:
             - printenv
@@ -111,7 +111,7 @@ pipelines:
           forceXrayScan:        false
           autoPublishBuildInfo: true
           integrations:
-            - name:  art
+            - name:  artifactory
           inputSteps:
             - name: Gradle_docker_build         # required
           outputResources:

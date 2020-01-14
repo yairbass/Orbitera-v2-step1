@@ -11,7 +11,7 @@ resources:
   - name:       gradle_fileSpec
     type:       FileSpec
     configuration:     
-      sourceArtifactory:    art
+      sourceArtifactory:    artifactory
       pattern:              team1-gradle-dev-us/com/jfrog/frogsws/0.1.0-20/frogsws-0.1.0-20.jar
       target:               tutorial/step3-create-docker-multi-app/package/*.jar
 
@@ -22,7 +22,7 @@ resources:
   - name:       npm_fileSpec
     type:       FileSpec
     configuration:     
-      sourceArtifactory:    art
+      sourceArtifactory:    artifactory
       pattern:              team1-npm-dev-us/frogsui/-/frogsui-0.3.0.tgz
       target:               tutorial/step3-create-docker-multi-app/package/*.tar.gz
       buildName:            Npm   # optional
@@ -32,63 +32,63 @@ resources:
   - name: gradleBuildInfo
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: artifactory
       buildName: Gradle
       buildNumber: ${run_number}
       
   - name: scanned_gradleBuild_Info
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: artifactory
       buildName: Gradle
       buildNumber: ${run_number}
       
   - name: promoted_gradleBuild_Info
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: artifactory
       buildName: Gradle
       buildNumber: ${run_number}
 
   - name: docker_gradleBuild_Info
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: artifactory
       buildName: Gradle
       buildNumber: ${run_number}
 
   - name: docker_npmBuild_Info
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: artifactory
       buildName: Npm
       buildNumber: ${run_number}
 
   - name: npmBuildInfo
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: artifactory
       buildName: Npm
       buildNumber: ${run_number}
 
   - name: scanned_npmBuild_Info
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: artifactory
       buildName: Npm
       buildNumber: ${run_number}
       
   - name: promoted_npmBuild_Info
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: artifactory
       buildName: Npm
       buildNumber: ${run_number}
       
   - name:       New_ReleaseBundle
     type:       ReleaseBundle
     configuration:
-      sourceDistribution:   dist
+      sourceDistribution:   distribution
       name:                 New_ReleaseBundle
       version:              v1.0.0
       isSigned:             false
@@ -96,7 +96,7 @@ resources:
   - name:       Signed_ReleaseBundle
     type:       ReleaseBundle
     configuration:
-      sourceDistribution:   dist
+      sourceDistribution:   distribution
       name:                 Signed_ReleaseBundle
       version:              v1.0.0
 

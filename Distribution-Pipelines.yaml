@@ -8,16 +8,19 @@ pipelines:
           releaseBundleVersion:     V1.0.${run_number}
           dryRun:                   false
           sign:                     false
-          storeAtSourceArtifactory: art
-          description:              RB of gradle and npm build
-          releaseNotes:
-            content:                demo
-            syntax:                 plain_text
+          storeAtSourceArtifactory: aritfactory
           inputResources:
             - name:                docker_gradleBuild_Info
             - name:                docker_npmBuild_Info
           outputResources:
             - name:                New_ReleaseBundle
+          description:              RB of gradle and npm build
+          releaseNotes:
+            syntax:                 markdown
+            content: |
+              ## Heading
+                * Bullet
+                * Points
 
 
       - name: Sign_ReleaseBundle

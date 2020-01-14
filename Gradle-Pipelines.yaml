@@ -32,6 +32,7 @@ pipelines:
           onStart:
             - export artifactory_plugins_url="${int_artifactory_url}"/jcenter-gradle-remote
             - export artifactory_libs_url="${int_artifactory_url}"/team1-gradle
+            - prinitenv
           onSuccess:
             - echo "Job well done!"
           onFailure:

@@ -23,7 +23,7 @@ resources:
     type:       FileSpec
     configuration:     
       sourceArtifactory:    artifactory
-      pattern:              team1-npm-dev-us/frogsui/-/frogsui-0.3.0.tgz
+      pattern:              team1-npm-dev-us/frogsui/frogsui-0.3.0.tgz
       target:               tutorial/step3-create-docker-multi-app/package/*.tar.gz
       buildName:            Npm   # optional
       buildNumber:          ${run_number}

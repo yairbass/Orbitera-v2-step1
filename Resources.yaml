@@ -101,7 +101,7 @@ resources:
       isSigned:             true
 
 
-- name: distribution_rules
+  - name: distribution_rules
     type: DistributionRule
     configuration:
       sourceDistribution: distribution

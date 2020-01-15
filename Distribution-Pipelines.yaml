@@ -27,7 +27,7 @@ pipelines:
         type: SignReleaseBundle
         configuration:
           inputResources:
-            - name:    New_ReleaseBundle # required
+            - name:    New_ReleaseBundle
               trigger: true
           outputResources:
-            - name:            Signed_ReleaseBundle
+            - name:  Signed_ReleaseBundle

@@ -32,13 +32,7 @@ pipelines:
           onStart:
             - export artifactory_plugins_url="${int_artifactory_url}"/jcenter-gradle-remote
             - export artifactory_libs_url="${int_artifactory_url}"/team1-gradle
-            - printenv
-          onSuccess:
-            - echo "Job well done!"
-          onFailure:
-            - echo "Something went terribly wrong"
-          onComplete: #always
-            - echo "Cleaning up some stuff"
+
             
             
       - name: gradle_scan
@@ -51,17 +45,7 @@ pipelines:
               trigger: true
           outputResources: 
             - name: scanned_gradleBuild_Info
-        execution:
-          onStart:
-            - echo "Preparing to scan artifacts..."
-          onSuccess:
-            - echo "Job well done!"
-          onFailure:
-            - echo "uh oh, something went wrong"
-          onComplete: #always
-            - echo "Cleaning up some stuff"
-          onCancel:
-            - echo "Someone cancelled the job"
+
             
                      
       - name: gradle_promote
@@ -96,27 +80,21 @@ pipelines:
             - name: artifactory
         execution:
           onStart:
-            - printenv
             - mkdir -p tutorial/step3-create-docker-multi-app/package
-          onSuccess:
-            - ls tutorial/step3-create-docker-multi-app/package
-          onFailure:
-            - echo "uh oh, something went wrong"
-          onComplete: #always
-            - echo "Cleaning up some stuff"
+
 
       - name: Gradle_docker_push
         type: DockerPush
         configuration:
-          targetRepository:     team1-docker     # required
+          targetRepository:     team1-docker
           forceXrayScan:        false
           autoPublishBuildInfo: true
           integrations:
             - name:  artifactory
           inputSteps:
-            - name: Gradle_docker_build         # required
+            - name: Gradle_docker_build
           outputResources:
-            - name: docker_gradleBuild_Info     # required if autoPublishBuildInfo is true
+            - name: docker_gradleBuild_Info
  
        
 

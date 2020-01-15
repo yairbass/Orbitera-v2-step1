@@ -1,5 +1,6 @@
 pipelines:
   - name: npm_build
+  # Global configuration section for the entire pipeline
     configuration:
       environmentVariables:
         readOnly:
@@ -99,12 +100,12 @@ pipelines:
       - name: Npm_docker_push
         type: DockerPush
         configuration:
-          targetRepository:     team1-docker     # required
+          targetRepository:     team1-docker
           forceXrayScan:        false
           autoPublishBuildInfo: true
           integrations:
             - name:  artifactory
           inputSteps:
-            - name: npm_docker_build         # required
+            - name: npm_docker_build
           outputResources:
-            - name: docker_npmBuild_Info     # required if autoPublishBuildInfo is true
+            - name: docker_npmBuild_Info

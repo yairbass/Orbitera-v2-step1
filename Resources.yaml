@@ -28,7 +28,7 @@ resources:
       buildNumber:          ${run_number}
       
 
-  - name: gradleBuildInfo
+  - name: gradleBuildInfo2
     type: BuildInfo
     configuration:
       sourceArtifactory: artifactory
@@ -99,4 +99,16 @@ resources:
       name:                 Signed_ReleaseBundle
       version:              v1.0.${run_number}
       isSigned:             true
+
+
+- name: distribution_rules
+    type: DistributionRule
+    configuration:
+      sourceDistribution: distribution
+      serviceName: "*"
+      siteName: "*"
+      cityName: "*"
+      countryCodes:
+        - "CN"
+        - "GB"
 

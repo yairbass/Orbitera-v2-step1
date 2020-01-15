@@ -1,5 +1,5 @@
 pipelines:
-  - name:    Distribution
+  - name:    distribution
     steps:
       - name: Create_ReleaseBundle
         type: CreateReleaseBundle

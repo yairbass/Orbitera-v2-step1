@@ -7,7 +7,6 @@ resources:
       branches:
         include: eplus-v2-orbitera
 
-
   - name:       gradle_fileSpec
     type:       FileSpec
     configuration:     
@@ -17,7 +16,6 @@ resources:
       buildName:            Gradle   # optional
       buildNumber:          ${run_number}
 
-
   - name:       npm_fileSpec
     type:       FileSpec
     configuration:     
@@ -26,7 +24,6 @@ resources:
       target:               tutorial/step3-create-docker-multi-app/package/*.tar.gz
       buildName:            Npm   # optional
       buildNumber:          ${run_number}
-      
 
   - name: gradleBuildInfo
     type: BuildInfo
@@ -98,4 +95,3 @@ resources:
       sourceDistribution:   distribution
       name:                 Signed_ReleaseBundle
       version:              v1.0.0
-

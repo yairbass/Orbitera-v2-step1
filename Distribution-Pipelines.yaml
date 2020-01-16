@@ -33,7 +33,7 @@ pipelines:
 #            - name:  Signed_ReleaseBundle
 
       - name: Sign_ReleaseBundle
-        type: bash
+        type: Bash
         configuration:
           integrations:
             - name: artifactory

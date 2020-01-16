@@ -48,6 +48,6 @@ pipelines:
 #          onStart:
 #            - printenv
 #          onExecute:
-#            - curl -XPOST ${int_artifactory_url}/api/v1/release_bundle/Demo_RB/v1.0.21/sign
+#            - curl -XPOST $distUrl/api/v1/release_bundle/$releaseBundleName/$releaseBundleVersion/sign
 #          onSuccess:
 #               - echo "RB was signed"

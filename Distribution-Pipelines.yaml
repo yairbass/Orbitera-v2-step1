@@ -3,8 +3,8 @@ pipelines:
     configuration:
       environmentVariables:
         readOnly:
-            restCall: ${int_distribution_url}/api/v1/release_bundle/${res_New_ReleaseBundle_name}/${res_New_ReleaseBundle_version}/sign
-            connString: {int_artifactory_user}:${int_artifactory_apikey}
+          restCall: ${int_distribution_url}/api/v1/release_bundle/${res_New_ReleaseBundle_name}/${res_New_ReleaseBundle_version}/sign
+          connString: {int_artifactory_user}:${int_artifactory_apikey}
     steps:
       - name: Create_ReleaseBundle
         type: CreateReleaseBundle

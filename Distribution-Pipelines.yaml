@@ -48,6 +48,6 @@ pipelines:
           onStart:
             - printenv
           onExecute:
-            - curl -XPOST $distUrl/api/v1/release_bundle/${res_New_ReleaseBundle_name}/${res_New_ReleaseBundle_version}/sign
+            - curl -XPOST {int_distribution_url}/api/v1/release_bundle/${res_New_ReleaseBundle_name}/${res_New_ReleaseBundle_version}/sign
           onSuccess:
                - echo "RB was signed"

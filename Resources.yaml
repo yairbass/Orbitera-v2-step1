@@ -7,7 +7,6 @@ resources:
       branches:
         include: eplus-v2-orbitera
 
-#### File spec to poulate docker artifacts
   - name:       gradle_fileSpec
     type:       FileSpec
     configuration:     
@@ -27,7 +26,6 @@ resources:
       buildName:            Npm   # optional
       buildNumber:          ${run_number}
       
-# Build Info all steps
 
   - name: gradleBuildInfo2
     type: BuildInfo
@@ -85,7 +83,6 @@ resources:
       buildName: npm_build
       buildNumber: ${run_number}
 
- # Release bundle Section
 
   - name:       New_ReleaseBundle
     type:       ReleaseBundle

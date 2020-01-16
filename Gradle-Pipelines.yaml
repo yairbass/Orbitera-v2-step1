@@ -1,5 +1,5 @@
 pipelines:
-  - name: gradle_build
+  - name: Gradle
     configuration:
       environmentVariables:
         readOnly:

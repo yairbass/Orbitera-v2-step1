@@ -7,7 +7,7 @@ pipelines:
           releaseBundleName:        Demo_RB
           releaseBundleVersion:     V1.0.${run_number}
           dryRun:                   false
-          sign:                     true
+          sign:                     false
           storeAtSourceArtifactory: aritfactory
           inputResources:
             - name:                docker_gradleBuild_Info

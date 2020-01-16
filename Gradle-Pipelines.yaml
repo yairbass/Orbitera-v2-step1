@@ -25,7 +25,7 @@ pipelines:
           inputResources:
             - name: orbitera_gitRepo_demo
           outputResources:
-            - name: gradleBuildInfo2
+            - name: gradleBuildInfo
           integrations:
             - name: artifactory
         execution:
@@ -41,7 +41,7 @@ pipelines:
           #inherits from bash
           waitUntilFinish: true
           inputResources:
-            - name: gradleBuildInfo2
+            - name: gradleBuildInfo
               trigger: true
           outputResources: 
             - name: scanned_gradleBuild_Info

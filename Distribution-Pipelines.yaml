@@ -23,11 +23,31 @@ pipelines:
                 * Points
 
 
-      - name: Sign_ReleaseBundle
-        type: SignReleaseBundle
-        configuration:
-          inputResources:
-            - name:    New_ReleaseBundle
-              trigger: true
-          outputResources:
-            - name:  Signed_ReleaseBundle
+#      - name: Sign_ReleaseBundle
+#        type: SignReleaseBundle
+#        configuration:
+#          inputResources:
+#            - name:    New_ReleaseBundle
+#              trigger: true
+#          outputResources:
+#            - name:  Signed_ReleaseBundle
+
+  - name: Sign_ReleaseBundle
+    type: bash
+    configuration:
+      integrations:
+        - name: artifactory
+        - name: distribution
+      inputResources:
+        - name:         New_ReleaseBundle
+          trigger:      true   # default true
+      outputResources:
+        - name:         Signed_ReleaseBundle
+
+     execution:
+       onStart:
+         - printenv
+       onExecute:
+        - curl -XPOST ${int_artifactory_url}/api/v1/release_bundle/Demo_RB/1.4/sign
+         onSuccess:
+           - send_notification mySlack "build completed"

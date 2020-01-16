@@ -3,7 +3,7 @@ pipelines:
     configuration:
       environmentVariables:
         readOnly:
-          restCall:  ${int_distribution_url}/api/v1/release_bundle/${res_New_ReleaseBundle_name}/${res_New_ReleaseBundle_version}/sign --header 'Content-Length: 0'
+          restCall:   ${int_distribution_url}/api/v1/release_bundle/${res_New_ReleaseBundle_name}/${res_New_ReleaseBundle_version}/sign
           connString: ${int_artifactory_user}:${int_artifactory_apikey}
     steps:
       - name: Create_ReleaseBundle
@@ -53,6 +53,6 @@ pipelines:
           onStart:
             - printenv
           onExecute:
-            - curl -XPOST -u${connString} ${restCall}
+            - curl -XPOST -u${connString} --header "Content-Length':' 0" ${restCall}
           onSuccess:
                - echo "RB was signed"

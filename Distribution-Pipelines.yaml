@@ -53,6 +53,6 @@ pipelines:
           onStart:
             - printenv
           onExecute:
-            - curl -XPOST -u${connString} --header "Content-Length\':\' 0" ${restCall}
+            - curl -XPOST -u${connString} --header \"Content-Length\\':\\' 0\" ${restCall}
           onSuccess:
                - echo "RB was signed"

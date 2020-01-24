@@ -47,8 +47,8 @@ pipelines:
           inputResources:
             - name:         New_ReleaseBundle
               trigger:      true   # default true
-          outputResources:
-            - name:         Signed_ReleaseBundle
+#          outputResources:
+#            - name:         Signed_ReleaseBundle
 
         execution:
           onStart:
@@ -56,7 +56,7 @@ pipelines:
           onExecute:
             - curl -XPOST -u${connString} --header "${header} 0" ${restCall}
           onSuccess:
-               - echo "RB was signed"
+               - echo "Release Bundle wasapproved signed"
 
 
       - name: Distribute_ReleaseBundle

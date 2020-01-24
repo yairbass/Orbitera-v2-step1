@@ -103,7 +103,7 @@ resources:
     configuration:
       sourceDistribution:   distribution
       serviceName:          edge-jpd
-      siteName:             *
-      cityName:             *
+      siteName:             "*"
+      cityName:             "*"
 
 

@@ -83,7 +83,7 @@ pipelines:
             - name: artifactory
         execution:
           onStart: 
-            - export ArtIp=$(echo ${int_artifactory_url}|awk -F '/' {print $2})
+            - export ArtIp=${int_artifactory_url}|awk -F '/' '{print $3}')
             - printenv
             - mkdir -p tutorial/step3-create-docker-multi-app/package
 

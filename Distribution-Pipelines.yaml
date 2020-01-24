@@ -62,7 +62,7 @@ pipelines:
       - name: Distribute_ReleaseBundle
         type: DistributeReleaseBundle
         configuration:
-          inputsteps:
+          inputSteps:
             - name: Sign_ReleaseBundle
               trigger: true
           inputResources:

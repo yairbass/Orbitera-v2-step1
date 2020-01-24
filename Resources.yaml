@@ -105,5 +105,8 @@ resources:
       serviceName:          edge-jpd
       siteName:             "*"
       cityName:             "*"
+      countryCodes:
+        - "*"
+
 
 

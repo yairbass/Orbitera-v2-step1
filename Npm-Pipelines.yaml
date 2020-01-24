@@ -77,9 +77,9 @@ pipelines:
           dockerFileLocation: tutorial/step3-create-docker-multi-app
           dockerFileName: Dockerfile
        #   dockerImageName: ${dockerImage}
-          dockerImageName: 
+          dockerImageName: ${ArtIP}/team1-docker/npm-app
           dockerImageTag: ${Version}
-          inputResources: ${ArtIP}/team1-docker/npm-app
+          inputResources: 
             - name: orbitera_gitRepo_demo
             - name: npm_fileSpec
             - name: promoted_npmBuild_Info

@@ -72,8 +72,8 @@ pipelines:
         configuration:
           dockerFileLocation: tutorial/step3-create-docker-multi-app
           dockerFileName: Dockerfile
-        # dockerImageName: ${ArtIP}/team1-docker/gradle-app
-          dockerImageName: ${dockerImage}
+          dockerImageName: ${ArtIP}/team1-docker/gradle-app
+       #   dockerImageName: ${dockerImage}
           dockerImageTag: ${Version}
           inputResources:
             - name: orbitera_gitRepo_demo

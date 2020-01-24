@@ -62,8 +62,8 @@ pipelines:
       - name: Distribute_ReleaseBundle
         type: DistributeReleaseBundle
         configuration:
+          dryRun: false
           inputResources:
             - name: New_ReleaseBundle
-              trigger: false
             - name: Distribution_Rule
-              trigger: false
+

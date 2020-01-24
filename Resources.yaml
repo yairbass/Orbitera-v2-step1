@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       path: yairbass/project-examples
-      gitProvider: YairBassGitHub
+      gitProvider: GitRepo
       branches:
         include: eplus-v2-orbitera
 

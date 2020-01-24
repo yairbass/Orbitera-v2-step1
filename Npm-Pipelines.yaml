@@ -5,7 +5,7 @@ pipelines:
       environmentVariables:
         readOnly:
           Version: 1.0.$run_number
-          dockerImage: 35.224.14.174/team1-docker/npm-app
+          dockerImage: 10.73.2.4/team1-docker/npm-app
     steps:
       - name: npm_compile
         type: NpmBuild

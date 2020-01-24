@@ -97,3 +97,13 @@ resources:
       name:                 Signed_ReleaseBundle
       version:              v1.0.0
 
+
+  - name:           Distribution_Rule
+    type:           DistributionRule
+    configuration:
+      sourceDistribution:   distribution
+      serviceName:          edge-jpd
+      siteName:             *
+      cityName:             *
+
+

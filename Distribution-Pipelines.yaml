@@ -57,3 +57,14 @@ pipelines:
             - curl -XPOST -u${connString} --header "${header} 0" ${restCall}
           onSuccess:
                - echo "RB was signed"
+
+
+      - name: Distribute_ReleaseBundle
+        type: DistributeReleaseBundle
+        configuration:
+          dryRun: <string> # optional
+          inputResources:
+            - name: Signed_ReleaseBundle
+              trigger: true
+            - name: Distribution_Rule # at least ONE is required
+              trigger: false    # default true

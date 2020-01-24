@@ -4,7 +4,7 @@ pipelines:
       environmentVariables:
         readOnly:
           Version: 1.0.$run_number
-          dockerImage: 34.107.168.13/team1-docker/gradle-app
+          dockerImage: 35.224.14.174/team1-docker/gradle-app
 
     steps:
       - name: gradle_bld_svc_demo
@@ -81,7 +81,7 @@ pipelines:
           integrations:
             - name: artifactory
         execution:
-          onStart:
+          onStart: 
             - mkdir -p tutorial/step3-create-docker-multi-app/package
 
 

@@ -64,7 +64,7 @@ pipelines:
         configuration:
           dryRun: <string> # optional
           inputResources:
-            - name: Signed_ReleaseBundle
-              trigger: true
-            - name: Distribution_Rule # at least ONE is required
+            - name: New_ReleaseBundle
+              trigger: false
+            - name: Distribution_Rule
               trigger: false    # default true

@@ -3,9 +3,9 @@ pipelines:
     configuration:
       environmentVariables:
         readOnly:
-          restCall:   ${int_distribution_url}/api/v1/release_bundle/${res_New_ReleaseBundle_name}/${res_New_ReleaseBundle_version}/sign
-          connString: ${int_artifactory_user}:${int_artifactory_apikey}
-          header: 'Content-Length:'
+         # restCall:   ${int_distribution_url}/api/v1/release_bundle/${res_New_ReleaseBundle_name}/${res_New_ReleaseBundle_version}/sign
+         # connString: ${int_artifactory_user}:${int_artifactory_apikey}
+         # header: 'Content-Length:'
     steps:
       - name: Create_ReleaseBundle
         type: CreateReleaseBundle
@@ -13,6 +13,7 @@ pipelines:
           releaseBundleName:        Demo_RB
           releaseBundleVersion:     V1.0.${run_number}
           dryRun:                   false
+          # Sign step preformed on automatic Release bundle Creation
           sign:                     true
           storeAtSourceArtifactory: aritfactory
           inputResources:
@@ -29,6 +30,9 @@ pipelines:
                 * Points
 
 
+
+#   Native Step To Sigh Release Bundle
+
 #      - name: Sign_ReleaseBundle
 #        type: SignReleaseBundle
 #        configuration:
@@ -37,6 +41,9 @@ pipelines:
 #              trigger: true
 #          outputResources:
 #            - name:  Signed_ReleaseBundle
+
+
+#  Bash Step to  sign release bundle
 
 #      - name: Sign_ReleaseBundle
 #        type: Bash
@@ -57,6 +64,8 @@ pipelines:
 #            - curl -XPOST -u${connString} --header "${header} 0" ${restCall}
 #          onSuccess:
 #               - echo "Release Bundle wasapproved signed"
+
+
 
 
       - name: Distribute_ReleaseBundle

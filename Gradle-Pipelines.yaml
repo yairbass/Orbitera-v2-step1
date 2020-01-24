@@ -4,7 +4,8 @@ pipelines:
       environmentVariables:
         readOnly:
           Version: 1.0.$run_number
-          dockerImage: 35.224.14.174/team1-docker/gradle-app
+          ArtIP: ${int_artifactory_url}|awk -f '/' {print $2}
+          dockerImage: 34.107.212.223/team1-docker/gradle-app
 
     steps:
       - name: gradle_bld_svc_demo
@@ -32,6 +33,7 @@ pipelines:
         execution:
           onStart:
           # Used for internal environment variables for the gradle build
+            - printenv
             - export artifactory_plugins_url="${int_artifactory_url}"/jcenter-gradle-remote
             - export artifactory_libs_url="${int_artifactory_url}"/team1-gradle
 

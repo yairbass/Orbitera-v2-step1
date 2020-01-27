@@ -25,6 +25,7 @@ pipelines:
             - name: orbitera_gitRepo_demo
         execution:
           onStart:
+            - npm audit fix --force
             - npm install shelljs
 
 
